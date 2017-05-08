@@ -1,7 +1,7 @@
 ### Application Gateway Integration fronting 3 VM Scale Sets and using URL Path based routing ###
 
 <i>Note</i>:  <strong>Learn more about this template by reading
-<a href="http://vincentlauzon.com/2017/05/08/url-routing-with…lication-gateway">
+<a href="https://vincentlauzon.com/2017/05/08/url-routing-with-azure-application-gateway/">
 this blog article
 </a>
 </strong>.
