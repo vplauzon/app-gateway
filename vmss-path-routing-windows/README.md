@@ -3,7 +3,8 @@
 <i>Note</i>:  <strong>Learn more about this template by reading
 <a href="http://vincentlauzon.com/2017/05/08/url-routing-with…lication-gateway">
 this blog article
-</a>.
+</a>
+</strong>.
 
 This template deploys an Azure Application Gateway fronting 3 Windows VM Scale Sets using URL path routing.
 
