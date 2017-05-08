@@ -29,6 +29,14 @@
       <Visible>False</Visible>
     </None>
     <Content Include="Deploy-AzureResourceGroup.ps1" />
+    <None Include="images\Diagram.png" />
+    <None Include="nested\app-gateway.json" />
+    <None Include="nested\metadata.json" />
+    <None Include="nested\network.json" />
+    <None Include="nested\vmss.json" />
+    <None Include="scripts\DeployDsc.ps1" />
+    <None Include="scripts\TargetConfiguration.ps1" />
+    <None Include="scripts\TargetConfiguration.ps1.zip" />
   </ItemGroup>
   <Target Name="GetReferenceAssemblyPaths" />
 </Project>
