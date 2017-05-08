@@ -1,7 +1,9 @@
 ### Application Gateway Integration fronting 3 VM Scale Sets and using URL Path based routing ###
 
 
-This template deploys an Azure Application Gateway fronting 3 Windows VM Scale Sets using URL path routing.  Optionnally it can use cookie based affinity to route to the same VM of each scale set for the same user (cookie).
+This template deploys an Azure Application Gateway fronting 3 Windows VM Scale Sets using URL path routing.
+
+Optionnally it can use <i>cookie-based affinity</i>.
 
 The Application Gateway is configured to listen to port 80 and route requests to VMs in scale sets.
 
@@ -9,7 +11,7 @@ The Application Gateway is configured to listen to port 80 and route requests to
  
 Note that this template installs simple HTML in VM Scale Set VMs using Desired State Configuration (DSC). 
 
-This template supports VM scale sets of up to 1,000 VMs, and uses Azure Managed Disks.
+This template supports VM scale sets of up to 1,000 VMs (non single placement) and uses Azure Managed Disks.
 
 In order to test the routing, you need to find the URL to the AppGateway-IP public IP.  Let's say this is http://0dd86922-82a7-4a4a-bc22-720d8e5a2dc7.cloudapp.net/, then:
 
