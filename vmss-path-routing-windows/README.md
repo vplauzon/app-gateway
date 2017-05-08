@@ -30,9 +30,9 @@ http://0dd86922-82a7-4a4a-bc22-720d8e5a2dc7.cloudapp.net/c/ routes to the sub fo
 
 Also note that there are three additional public IPs & load balancers, one associated to each VM Scale Set performing NAT to the RDP protocol.
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fvplauzon%2Fazure-quickstart-templates%2Fmaster%2F201-app-gateway-vmss-url-path-routing-windows%2Fazuredeploy.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fvplauzon%2Fapp-gateway%2Fvmss-path-routing-windows%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
-<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Fvplauzon%2Fazure-quickstart-templates%2Fmaster%2F201-app-gateway-vmss-url-path-routing-windows%2Fazuredeploy.json" target="_blank">
+<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Fvplauzon%2Fapp-gateway%2Fvmss-path-routing-windows%2Fazuredeploy.json" target="_blank">
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
