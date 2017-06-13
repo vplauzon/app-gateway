@@ -12,7 +12,7 @@ Optionnally it can use <i>cookie-based affinity</i>.
 
 The Application Gateway is configured to listen to port 80 and route requests to VMs in scale sets.
 
-<img src="/vplauzon/app-gateway/blob/master/vmss-path-routing-windows/images/Diagram.png?raw=true" />
+<img src="https://raw.githubusercontent.com/vplauzon/app-gateway/master/vmss-path-routing-windows/images/Diagram.png" />
  
 Note that this template installs simple HTML in VM Scale Set VMs using Desired State Configuration (DSC). 
 
