@@ -26,18 +26,18 @@
   <!-- vertag<:>end -->
   <ItemGroup>
     <None Include="app-gateway.json" />
-    <None Include="azuredeploy.json" />
-    <None Include="azuredeploy.parameters.json" />
+    <Content Include="azuredeploy.json" />
+    <Content Include="azuredeploy.parameters.json" />
     <None Include="Deployment.targets">
       <Visible>False</Visible>
     </None>
     <Content Include="Deploy-AzureResourceGroup.ps1" />
     <None Include="images\Diagram.png" />
     <None Include="metadata.json" />
-    <None Include="nested\app-gateway.json" />
-    <None Include="nested\metadata.json" />
-    <None Include="nested\network.json" />
-    <None Include="nested\vmss.json" />
+    <Content Include="nested\app-gateway.json" />
+    <Content Include="nested\metadata.json" />
+    <Content Include="nested\network.json" />
+    <Content Include="nested\vmss.json" />
     <None Include="network.json" />
     <None Include="README.md" />
     <None Include="scripts\DeployDsc.ps1" />
