@@ -109,12 +109,8 @@
                           "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('VNet Name')), '/subnets/', parameters('Subnet Name'))]"
                         },
                         "loadBalancerBackendAddressPools": [
-                          {
-                          }
                         ],
                         "loadBalancerInboundNatPools": [
-                          {
-                          }
                         ],
                         "applicationGatewayBackendAddressPools": [
                           {
