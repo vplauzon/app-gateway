@@ -53,16 +53,15 @@
             }
           },
           {
-            "name": "app-A",
+            "name": "jumpbox",
             "properties": {
               "addressPrefix": "[concat(parameters('IP Prefix'),'.32/28')]",
               "networkSecurityGroup": {
-                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('NSG App'))]"
               }
             }
           },
           {
-            "name": "app-B",
+            "name": "app-A",
             "properties": {
               "addressPrefix": "[concat(parameters('IP Prefix'),'.48/28')]",
               "networkSecurityGroup": {
@@ -71,9 +70,18 @@
             }
           },
           {
-            "name": "app-C",
+            "name": "app-B",
             "properties": {
               "addressPrefix": "[concat(parameters('IP Prefix'),'.64/28')]",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('NSG App'))]"
+              }
+            }
+          },
+          {
+            "name": "app-C",
+            "properties": {
+              "addressPrefix": "[concat(parameters('IP Prefix'),'.80/28')]",
               "networkSecurityGroup": {
                 "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('NSG App'))]"
               }

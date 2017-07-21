@@ -23,10 +23,6 @@
       "defaultValue": "MyVmss",
       "type": "string"
     },
-    "Domain Name Label": {
-      "defaultValue": null,
-      "type": "string"
-    },
     "VM Admin Name": {
       "defaultValue": "admin",
       "type": "string"
@@ -55,10 +51,6 @@
     }
   },
   "variables": {
-    "IP Name": "[concat(parameters('Scale Set Name'), '-IP')]",
-    "LB Name": "[concat(parameters('Scale Set Name'), '-LB')]",
-    "NAT Pool Name": "mainNatPool",
-    "Backend Pool Name": "mainBackendPool",
     "NIC Prefix": "[concat(parameters('Scale Set Name'), '-Nic')]",
     "Image Reference": {
       "publisher": "MicrosoftWindowsServer",
@@ -69,85 +61,11 @@
   },
   "resources": [
     {
-      "type": "Microsoft.Network/publicIPAddresses",
-      "name": "[variables('IP Name')]",
-      "apiVersion": "2015-06-15",
-      "location": "[resourceGroup().location]",
-      "dependsOn": [],
-      "tags": {
-        "displayName": "Public IP"
-      },
-      "properties": {
-        "publicIPAllocationMethod": "Dynamic",
-        "idleTimeoutInMinutes": 4,
-        "dnsSettings": {
-          "domainNameLabel": "[parameters('Domain Name Label')]"
-        }
-      }
-    },
-    {
-      "name": "[variables('LB Name')]",
-      "type": "Microsoft.Network/loadBalancers",
-      "apiVersion": "2015-06-15",
-      "location": "[resourceGroup().location]",
-      "dependsOn": [
-        "[resourceId('Microsoft.Network/publicIPAddresses', variables('IP Name'))]"
-      ],
-      "tags": {
-        "displayName": "Load Balancer"
-      },
-      "properties": {
-        "frontendIPConfigurations": [
-          {
-            "name": "LoadBalancerFrontEnd",
-            "comments": "Front end of LB:  the IP address",
-            "properties": {
-              "publicIPAddress": {
-                "id": "[resourceId('Microsoft.Network/publicIPAddresses/', variables('IP Name'))]"
-              }
-            }
-          }
-        ],
-        "backendAddressPools": [
-          {
-            "name": "[variables('Backend Pool Name')]"
-          }
-        ],
-        "loadBalancingRules": [],
-        "probes": [
-          {
-            "name": "TCP-Probe",
-            "properties": {
-              "protocol": "Tcp",
-              "port": 80,
-              "intervalInSeconds": 5,
-              "numberOfProbes": 2
-            }
-          }
-        ],
-        "inboundNatPools": [
-          {
-            "name": "[variables('NAT Pool Name')]",
-            "properties": {
-              "frontendIPConfiguration": {
-                "id": "[concat(resourceId('Microsoft.Network/loadBalancers', variables('LB Name')), '/frontendIPConfigurations/LoadBalancerFrontEnd')]"
-              },
-              "protocol": "tcp",
-              "frontendPortRangeStart": 5000,
-              "frontendPortRangeEnd": 5200,
-              "backendPort": 3389
-            }
-          }
-        ]
-      }
-    },
-    {
       "type": "Microsoft.Compute/virtualMachineScaleSets",
       "name": "[parameters('Scale Set Name')]",
       "location": "[resourceGroup().location]",
       "apiVersion": "2016-04-30-preview",
       "dependsOn": [
-        "[resourceId('Microsoft.Network/loadBalancers', variables('LB Name'))]"
       ],
       "tags": {
         "displayName": "Scale Set"
@@ -192,12 +110,10 @@
                         },
                         "loadBalancerBackendAddressPools": [
                           {
-                            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', variables('LB Name')), '/backendAddressPools/', variables('Backend Pool Name'))]"
                           }
                         ],
                         "loadBalancerInboundNatPools": [
                           {
-                            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', variables('LB Name')), '/inboundNatPools/', variables('NAT Pool Name'))]"
                           }
                         ],
                         "applicationGatewayBackendAddressPools": [

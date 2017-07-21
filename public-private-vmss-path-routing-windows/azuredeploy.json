@@ -82,7 +82,7 @@
     }
   },
   "variables": {
-    "Content Root URL": "https://raw.githubusercontent.com/vplauzon/app-gateway/master/vmss-path-routing-windows/",
+    "Content Root URL": "https://raw.githubusercontent.com/vplauzon/app-gateway/master/public-private-vmss-path-routing-windows/",
     "Template Network URL": "[concat(variables('Content Root URL'), 'nested/network.json')]",
     "Template App Gateway URL": "[concat(variables('Content Root URL'), 'nested/app-gateway.json')]",
     "Template VMSS URL": "[concat(variables('Content Root URL'), 'nested/vmss.json')]",
@@ -149,7 +149,6 @@
           "Dsc Url": { "value": "[variables('Dsc Url')]" },
           "App Gateway Backend Pool ID": { "value": "[concat(variables('App Gateway Backend Pool ID Prefix'), 'app-a-Pool')]" },
           "Scale Set Name": { "value": "App-A" },
-          "Domain Name Label": { "value": "[concat(parameters('Public DNS Prefix'), 'a')]" },
           "VM Admin Name": { "value": "[parameters('VM Admin Name')]" },
           "VM Admin Password": { "value": "[parameters('VM Admin Password')]" },
           "Instance Count": { "value": "[parameters('Instance Count')]" },
@@ -177,7 +176,6 @@
           "Dsc Url": { "value": "[variables('Dsc Url')]" },
           "App Gateway Backend Pool ID": { "value": "[concat(variables('App Gateway Backend Pool ID Prefix'), 'app-b-Pool')]" },
           "Scale Set Name": { "value": "App-B" },
-          "Domain Name Label": { "value": "[concat(parameters('Public DNS Prefix'), 'b')]" },
           "VM Admin Name": { "value": "[parameters('VM Admin Name')]" },
           "VM Admin Password": { "value": "[parameters('VM Admin Password')]" },
           "Instance Count": { "value": "[parameters('Instance Count')]" },
@@ -205,7 +203,6 @@
           "Dsc Url": { "value": "[variables('Dsc Url')]" },
           "App Gateway Backend Pool ID": { "value": "[concat(variables('App Gateway Backend Pool ID Prefix'), 'app-c-Pool')]" },
           "Scale Set Name": { "value": "App-C" },
-          "Domain Name Label": { "value": "[concat(parameters('Public DNS Prefix'), 'c')]" },
           "VM Admin Name": { "value": "[parameters('VM Admin Name')]" },
           "VM Admin Password": { "value": "[parameters('VM Admin Password')]" },
           "Instance Count": { "value": "[parameters('Instance Count')]" },
