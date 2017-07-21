@@ -25,7 +25,6 @@
   <Import Condition=" Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Deployment\1.1\DeploymentProject.targets') " Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Deployment\1.1\DeploymentProject.targets" />
   <!-- vertag<:>end -->
   <ItemGroup>
-    <None Include="app-gateway.json" />
     <Content Include="azuredeploy.json" />
     <Content Include="azuredeploy.parameters.json" />
     <None Include="Deployment.targets">
@@ -38,12 +37,10 @@
     <Content Include="nested\metadata.json" />
     <Content Include="nested\network.json" />
     <Content Include="nested\vmss.json" />
-    <None Include="network.json" />
     <None Include="README.md" />
     <None Include="scripts\DeployDsc.ps1" />
     <None Include="scripts\TargetConfiguration.ps1" />
     <None Include="scripts\TargetConfiguration.ps1.zip" />
-    <None Include="vmss.json" />
   </ItemGroup>
   <Target Name="GetReferenceAssemblyPaths" />
 </Project>
