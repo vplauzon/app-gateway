@@ -55,9 +55,7 @@
           {
             "name": "jumpbox",
             "properties": {
-              "addressPrefix": "[concat(parameters('IP Prefix'),'.32/28')]",
-              "networkSecurityGroup": {
-              }
+              "addressPrefix": "[concat(parameters('IP Prefix'),'.32/28')]"
             }
           },
           {
