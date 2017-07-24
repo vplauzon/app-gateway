@@ -8,6 +8,14 @@
     "Subnet Name": {
       "type": "string"
     },
+    "VM Admin Name": {
+      "defaultValue": "admin",
+      "type": "string"
+    },
+    "VM Admin Password": {
+      "defaultValue": null,
+      "type": "securestring"
+    },
     "VM Size": {
       "defaultValue": "Standard_DS2_v2",
       "type": "string",
@@ -31,7 +39,13 @@
     "virtualMachineName": "jumpbox",
     "networkInterfaceName": "jumpbox-nic",
     "vnetId": "[resourceId('Microsoft.Network/virtualNetworks', parameters('VNet Name'))]",
-    "subnetRef": "[concat(variables('vnetId'), '/subnets/', parameters('Subnet Name'))]"
+    "subnetRef": "[concat(variables('vnetId'), '/subnets/', parameters('Subnet Name'))]",
+    "Image Reference": {
+      "publisher": "MicrosoftWindowsServer",
+      "offer": "WindowsServer",
+      "sku": "2012-R2-Datacenter",
+      "version": "latest"
+    }
   },
   "resources": [
     {
@@ -70,38 +84,31 @@
           }
         ]
       }
-    }
-    /*
-    ,
+    },
     {
-      "name": "[parameters('virtualMachineName')]",
+      "name": "[variables('virtualMachineName')]",
       "type": "Microsoft.Compute/virtualMachines",
       "apiVersion": "2016-04-30-preview",
       "location": "[resourceGroup().location]",
       "dependsOn": [
-        "[concat('Microsoft.Network/networkInterfaces/', parameters('networkInterfaceName'))]"
+        "[concat('Microsoft.Network/networkInterfaces/', variables('networkInterfaceName'))]"
       ],
       "properties": {
         "osProfile": {
-          "computerName": "[parameters('virtualMachineName')]",
-          "adminUsername": "[parameters('adminUsername')]",
-          "adminPassword": "[parameters('adminPassword')]",
+          "computerName": "[variables('virtualMachineName')]",
+          "adminUsername": "[parameters('VM Admin Name')]",
+          "adminPassword": "[parameters('VM Admin Password')]",
           "windowsConfiguration": {
             "provisionVmAgent": "true"
           }
         },
         "hardwareProfile": {
-          "vmSize": "[parameters('virtualMachineSize')]"
+          "vmSize": "[parameters('VM Size')]"
         },
         "storageProfile": {
-          "imageReference": {
-            "publisher": "MicrosoftWindowsServer",
-            "offer": "WindowsServer",
-            "sku": "2016-Datacenter",
-            "version": "latest"
-          },
+          "imageReference": "[variables('Image Reference')]",
           "osDisk": {
-            "createOption": "fromImage",
+            "createOption": "FromImage",
             "managedDisk": {
               "storageAccountType": "Premium_LRS"
             }
@@ -111,13 +118,12 @@
         "networkProfile": {
           "networkInterfaces": [
             {
-              "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaceName'))]"
+              "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaceName'))]"
             }
           ]
         }
       }
     }
-      */
   ],
   "outputs": {
   }

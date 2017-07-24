@@ -227,6 +227,8 @@
         "parameters": {
           "VNet Name": { "value": "[parameters('VNET Name')]" },
           "Subnet Name": { "value": "jumpbox" },
+          "VM Admin Name": { "value": "[parameters('VM Admin Name')]" },
+          "VM Admin Password": { "value": "[parameters('VM Admin Password')]" },
           "VM Size": { "value": "[parameters('VM Size')]" },
           "Public IP DN": { "value": "[parameters('Jumpbox DNS Prefix')]" }
         }
