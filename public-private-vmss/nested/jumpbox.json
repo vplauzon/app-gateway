@@ -27,6 +27,7 @@
     }
   },
   "variables": {
+    "IP Name": "jumpbox-ip",
     "virtualMachineName": "jumpbox",
     "networkInterfaceName": "jumpbox-nic",
     "vnetId": "[resourceId('Microsoft.Network/virtualNetworks', parameters('VNet Name'))]",
@@ -34,7 +35,7 @@
   },
   "resources": [
     {
-      "name": "jumpbox-ip",
+      "name": "[variables('IP Name')]",
       "type": "Microsoft.Network/publicIpAddresses",
       "apiVersion": "2016-09-01",
       "location": "[resourceGroup().location]",
@@ -51,7 +52,7 @@
       "apiVersion": "2016-09-01",
       "location": "[resourceGroup().location]",
       "dependsOn": [
-        "[concat('Microsoft.Network/publicIpAddresses/', parameters('Public IP DN'))]"
+        "[concat('Microsoft.Network/publicIpAddresses/', variables('IP Name'))]"
       ],
       "properties": {
         "ipConfigurations": [
