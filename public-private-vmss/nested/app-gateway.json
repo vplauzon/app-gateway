@@ -108,11 +108,16 @@
         ],
         "frontendIPConfigurations": [
           {
-            "name": "appGatewayFrontendIP",
+            "name": "publicFrontendConfig",
             "properties": {
               "publicIPAddress": {
                 "id": "[variables('IP ID')]"
               }
+            }
+          },
+          {
+            "name": "privateFrontendConfig",
+            "properties": {
             }
           }
         ],
@@ -151,7 +156,7 @@
             "name": "mainHttpListener",
             "properties": {
               "FrontendIpConfiguration": {
-                "Id": "[concat(resourceId('Microsoft.Network/applicationGateways', variables('AppGateway Name')), '/frontendIPConfigurations/appGatewayFrontendIP')]"
+                "Id": "[concat(resourceId('Microsoft.Network/applicationGateways', variables('AppGateway Name')), '/frontendIPConfigurations/publicFrontendConfig')]"
               },
               "FrontendPort": {
                 "Id": "[concat(resourceId('Microsoft.Network/applicationGateways', variables('AppGateway Name')), '/frontendPorts/appGatewayFrontendPort')]"
