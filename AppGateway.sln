@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "vmss-path-routing-windows", "vmss-path-routing-windows\vmss-path-routing-windows.deployproj", "{AC25F8A1-CB46-448C-9DA3-3173C120B5F3}"
 EndProject
-Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "public-private-vmss-path-routing-windows", "public-private-vmss-path-routing-windows\public-private-vmss-path-routing-windows.deployproj", "{9B578FC4-F6BF-4E60-8729-0674796385E1}"
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "public-private-vmss", "public-private-vmss\public-private-vmss.deployproj", "{6A883FEE-3B14-4A5A-B494-A56252E50275}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{AC25F8A1-CB46-448C-9DA3-3173C120B5F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC25F8A1-CB46-448C-9DA3-3173C120B5F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC25F8A1-CB46-448C-9DA3-3173C120B5F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9B578FC4-F6BF-4E60-8729-0674796385E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B578FC4-F6BF-4E60-8729-0674796385E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B578FC4-F6BF-4E60-8729-0674796385E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B578FC4-F6BF-4E60-8729-0674796385E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A883FEE-3B14-4A5A-B494-A56252E50275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A883FEE-3B14-4A5A-B494-A56252E50275}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A883FEE-3B14-4A5A-B494-A56252E50275}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A883FEE-3B14-4A5A-B494-A56252E50275}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
