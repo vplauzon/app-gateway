@@ -33,6 +33,7 @@
     <Content Include="Deploy-AzureResourceGroup.ps1" />
     <None Include="images\Diagram.png" />
     <None Include="metadata.json" />
+    <Content Include="nested\jumpbox.json" />
     <Content Include="nested\app-gateway.json" />
     <Content Include="nested\metadata.json" />
     <Content Include="nested\network.json" />

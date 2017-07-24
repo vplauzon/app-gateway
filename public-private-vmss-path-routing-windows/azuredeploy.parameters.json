@@ -2,11 +2,11 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
   "parameters": {
-    "Public DNS Prefix": {
-      "value": "GEN-UNIQUE"
+    "Jumpbox Public DNS Prefix": {
+      "value": "vpl-dn"
     },
     "VM Admin Password": {
-      "value": "GEN-PASSWORD"
+      "value": "Klsadfu3234!$%b"
     }
   }
 }

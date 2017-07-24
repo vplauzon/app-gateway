@@ -2,11 +2,11 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.1.0.0",
   "parameters": {
-    "Public DNS Prefix": {
+    "Jumpbox Public DNS Prefix": {
       "defaultValue": null,
       "type": "string",
       "metadata": {
-        "description": "DNS prefix for public IP fronting VM Scale Set directly (NAT RDP)"
+        "description": "DNS prefix for public IP fronting Jumpbox VM"
       }
     },
     "RDP Rule": {
@@ -86,6 +86,7 @@
     "Template Network URL": "[concat(variables('Content Root URL'), 'nested/network.json')]",
     "Template App Gateway URL": "[concat(variables('Content Root URL'), 'nested/app-gateway.json')]",
     "Template VMSS URL": "[concat(variables('Content Root URL'), 'nested/vmss.json')]",
+    "Template Jumpbox URL": "[concat(variables('Content Root URL'), 'nested/jumpbox.json')]",
     "Dsc Url": "[concat(variables('Content Root URL'), 'scripts/TargetConfiguration.ps1.zip')]",
     "App Gateway Backend Pool ID Prefix": "[concat(resourceId('Microsoft.Network/applicationGateways', 'AppGateway'), '/backendAddressPools/')]"
   },
@@ -207,6 +208,27 @@
           "VM Admin Password": { "value": "[parameters('VM Admin Password')]" },
           "Instance Count": { "value": "[parameters('Instance Count')]" },
           "VM Size": { "value": "[parameters('VM Size')]" }
+        }
+      }
+    },
+    {
+      "name": "Jumpbox",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2015-01-01",
+      "dependsOn": [
+        "[resourceId('Microsoft.Resources/deployments', 'Network')]"
+      ],
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "[variables('Template Jumpbox URL')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "VNet Name": { "value": "[parameters('VNET Name')]" },
+          "Subnet Name": { "value": "jumpbox" },
+          "VM Size": { "value": "[parameters('VM Size')]" },
+          "Public IP DN": { "value": "[parameters('Jumpbox Public DNS Prefix')]" }
         }
       }
     }
