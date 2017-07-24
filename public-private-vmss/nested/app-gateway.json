@@ -118,6 +118,7 @@
           {
             "name": "privateFrontendConfig",
             "properties": {
+              "subnet": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('VNet Name')), '/subnets/', 'jumpbox')]"
             }
           }
         ],
