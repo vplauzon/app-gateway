@@ -158,7 +158,7 @@
         ],
         "httpListeners": [
           {
-            "name": "mainHttpListener",
+            "name": "publicHttpListener",
             "properties": {
               "FrontendIpConfiguration": {
                 "Id": "[concat(resourceId('Microsoft.Network/applicationGateways', variables('AppGateway Name')), '/frontendIPConfigurations/publicFrontendConfig')]"
@@ -234,7 +234,7 @@
             "properties": {
               "RuleType": "PathBasedRouting",
               "httpListener": {
-                "id": "[concat(variables('AppGateway ID'), '/httpListeners/mainHttpListener')]"
+                "id": "[concat(variables('AppGateway ID'), '/httpListeners/publicHttpListener')]"
               },
               "urlPathMap": {
                 "id": "[concat(variables('AppGateway ID'), '/urlPathMaps/mainUrlPathMap')]"
