@@ -2,7 +2,7 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.1.0.0",
   "parameters": {
-    "Jumpbox Public DNS Prefix": {
+    "Jumpbox DNS Prefix": {
       "defaultValue": null,
       "type": "string",
       "metadata": {
@@ -228,7 +228,7 @@
           "VNet Name": { "value": "[parameters('VNET Name')]" },
           "Subnet Name": { "value": "jumpbox" },
           "VM Size": { "value": "[parameters('VM Size')]" },
-          "Public IP DN": { "value": "[parameters('Jumpbox Public DNS Prefix')]" }
+          "Public IP DN": { "value": "[parameters('Jumpbox DNS Prefix')]" }
         }
       }
     }
