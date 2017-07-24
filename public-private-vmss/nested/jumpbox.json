@@ -63,7 +63,7 @@
               },
               "privateIPAllocationMethod": "Dynamic",
               "publicIpAddress": {
-                "id": "[resourceId('Microsoft.Network/publicIpAddresses', parameters('Public IP Name'))]"
+                "id": "[resourceId('Microsoft.Network/publicIpAddresses', parameters('Public IP DN'))]"
               }
             }
           }
