@@ -56,7 +56,7 @@
     "frontEndPort": "80",
     "backEndPort": "80",
     "IP ID": "[resourceId('Microsoft.Network/publicIPAddresses', variables('IP Name'))]",
-    "Private AppGateway Subenet ID": "[resourceId('Microsoft.Network/virtualNetworks/subnets', concat(parameters('VNet Name'), 'jumpbox'))]",
+    "Private AppGateway Subenet ID": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('VNet Name'), 'jumpbox')]",
     "AppGateway Subnet ID": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('VNet Name')), '/subnets/', parameters('Subnet Name'))]",
     "AppGateway Name": "AppGateway",
     "AppGateway ID": "[resourceId('Microsoft.Network/applicationGateways', variables('AppGateway Name'))]",
