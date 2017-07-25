@@ -132,6 +132,12 @@
             "properties": {
               "Port": "[variables('frontendPort')]"
             }
+          },
+          {
+            "name": "privateFrontendPort",
+            "properties": {
+              "Port": "[variables('frontendPort')]"
+            }
           }
         ],
         "backendAddressPools": [
@@ -177,7 +183,7 @@
                 "Id": "[concat(resourceId('Microsoft.Network/applicationGateways', variables('AppGateway Name')), '/frontendIPConfigurations/privateFrontendConfig')]"
               },
               "FrontendPort": {
-                "Id": "[concat(resourceId('Microsoft.Network/applicationGateways', variables('AppGateway Name')), '/frontendPorts/appGatewayFrontendPort')]"
+                "Id": "[concat(resourceId('Microsoft.Network/applicationGateways', variables('AppGateway Name')), '/frontendPorts/privateFrontendPort')]"
               },
               "Protocol": "Http",
               "SslCertificate": null
