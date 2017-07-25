@@ -9,8 +9,8 @@
         "description": "DNS prefix for public IP fronting Jumpbox VM"
       }
     },
-    "RDP Rule": {
-      "defaultValue": "Deny",
+    "Jumpbox RDP Rule": {
+      "defaultValue": "Allow",
       "type": "string",
       "allowedValues": [
         "Allow",
@@ -104,7 +104,7 @@
         "parameters": {
           "VNet Name": { "value": "[parameters('VNET Name')]" },
           "IP Prefix": { "value": "[parameters('VNET IP Prefix')]" },
-          "RDP Rule": { "value": "[parameters('RDP Rule')]" }
+          "Jumpbox RDP Rule": { "value": "[parameters('Jumpbox RDP Rule')]" }
         }
       }
     },

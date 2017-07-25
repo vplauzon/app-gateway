@@ -169,6 +169,19 @@
               "Protocol": "Http",
               "SslCertificate": null
             }
+          },
+          {
+            "name": "privateHttpListener",
+            "properties": {
+              "FrontendIpConfiguration": {
+                "Id": "[concat(resourceId('Microsoft.Network/applicationGateways', variables('AppGateway Name')), '/frontendIPConfigurations/privateFrontendConfig')]"
+              },
+              "FrontendPort": {
+                "Id": "[concat(resourceId('Microsoft.Network/applicationGateways', variables('AppGateway Name')), '/frontendPorts/appGatewayFrontendPort')]"
+              },
+              "Protocol": "Http",
+              "SslCertificate": null
+            }
           }
         ],
         "urlPathMaps": [
