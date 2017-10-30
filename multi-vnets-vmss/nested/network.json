@@ -8,7 +8,7 @@
     "App Gateway IP Prefix": {
       "type": "string"
     },
-    "Set VNet VNet Name": {
+    "Set VNet Name": {
       "type": "string"
     },
     "Set VNet IP Prefix": {
@@ -56,7 +56,7 @@
     },
     {
       "type": "Microsoft.Network/virtualNetworks",
-      "name": "[parameters('Set VNet VNet Name')]",
+      "name": "[parameters('Set VNet Name')]",
       "apiVersion": "2016-03-30",
       "location": "[resourceGroup().location]",
       "dependsOn": [
