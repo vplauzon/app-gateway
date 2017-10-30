@@ -122,8 +122,7 @@
           "RDP Rule": { "value": "[parameters('RDP Rule')]" }
         }
       }
-    }
-    /*,
+    },
     {
       "name": "AppGateway",
       "type": "Microsoft.Resources/deployments",
@@ -138,7 +137,7 @@
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
-          "VNet Name": { "value": "[parameters('VNET Name')]" },
+          "VNet Name": { "value": "[parameters('App Gateway VNET Name')]" },
           "Subnet Name": { "value": "appGateway" },
           "AppGateway Size": { "value": "Standard_Medium" },
           "AppGateway Instance Count": { "value": 2 },
@@ -161,7 +160,7 @@
         },
         "parameters": {
           "App Name": { "value": "A" },
-          "VNet Name": { "value": "VNet" },
+          "VNet Name": { "value": "[parameters('Set VNET Name')]" },
           "Subnet Name": { "value": "app-A" },
           "Dsc Url": { "value": "[variables('Dsc Url')]" },
           "App Gateway Backend Pool ID": { "value": "[concat(variables('App Gateway Backend Pool ID Prefix'), 'app-a-Pool')]" },
@@ -189,7 +188,7 @@
         },
         "parameters": {
           "App Name": { "value": "B" },
-          "VNet Name": { "value": "VNet" },
+          "VNet Name": { "value": "[parameters('Set VNET Name')]" },
           "Subnet Name": { "value": "app-B" },
           "Dsc Url": { "value": "[variables('Dsc Url')]" },
           "App Gateway Backend Pool ID": { "value": "[concat(variables('App Gateway Backend Pool ID Prefix'), 'app-b-Pool')]" },
@@ -217,7 +216,7 @@
         },
         "parameters": {
           "App Name": { "value": "C" },
-          "VNet Name": { "value": "VNet" },
+          "VNet Name": { "value": "[parameters('Set VNET Name')]" },
           "Subnet Name": { "value": "app-C" },
           "Dsc Url": { "value": "[variables('Dsc Url')]" },
           "App Gateway Backend Pool ID": { "value": "[concat(variables('App Gateway Backend Pool ID Prefix'), 'app-c-Pool')]" },
@@ -230,6 +229,5 @@
         }
       }
     }
-      */
-          ]
-        }
+  ]
+}
