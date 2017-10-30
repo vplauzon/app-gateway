@@ -54,16 +54,34 @@
           }
         ]
       },
-      "resources": []
+      "resources": [
+        {
+          "apiVersion": "2016-06-01",
+          "type": "virtualNetworkPeerings",
+          "name": "[variables('reversePeeringName')]",
+          "location": "[resourceGroup().location]",
+          "dependsOn": [
+            "[resourceId('Microsoft.Network/virtualNetworks', parameters('App Gateway VNet Name'))]",
+            "[resourceId('Microsoft.Network/virtualNetworks', parameters('Set VNet Name'))]"
+          ],
+          "properties": {
+            "remoteVirtualNetwork": {
+              "id": "[resourceId('Microsoft.Network/virtualNetworks', parameters('Set VNet Name'))]"
+            },
+            "allowVirtualNetworkAccess": true,
+            "allowForwardedTraffic": true,
+            "allowGatewayTransit": false,
+            "useRemoteGateways": false
+          }
+        }
+      ]
     },
     {
       "type": "Microsoft.Network/virtualNetworks",
       "name": "[parameters('Set VNet Name')]",
       "apiVersion": "2016-03-30",
       "location": "[resourceGroup().location]",
-      "dependsOn": [
-        "[resourceId('Microsoft.Network/virtualNetworks', parameters('App Gateway VNet Name'))]"
-      ],
+      "dependsOn": [],
       "properties": {
         "addressSpace": {
           "addressPrefixes": [
@@ -95,7 +113,7 @@
         {
           "apiVersion": "2016-06-01",
           "type": "virtualNetworkPeerings",
-          "name": "MainPeering",
+          "name": "[variables('reversePeeringName')]",
           "location": "[resourceGroup().location]",
           "dependsOn": [
             "[resourceId('Microsoft.Network/virtualNetworks', parameters('App Gateway VNet Name'))]",
