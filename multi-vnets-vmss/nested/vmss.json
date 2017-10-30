@@ -199,12 +199,13 @@
                           {
                             "id": "[concat(resourceId('Microsoft.Network/loadBalancers', variables('LB Name')), '/inboundNatPools/', variables('NAT Pool Name'))]"
                           }
-                        ],
-                        "applicationGatewayBackendAddressPools": [
+                        ]
+                        //,
+                        //"applicationGatewayBackendAddressPools": [
                           //{
                           //  "id": "[parameters('App Gateway Backend Pool ID')]"
                           //}
-                        ]
+                        //]
                       }
                     }
                   ]
