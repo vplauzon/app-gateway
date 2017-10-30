@@ -31,15 +31,29 @@
         "description": "App Gateway cookie based affinity"
       }
     },
-    "VNET Name": {
-      "defaultValue": "VNet",
+    "App Gateway VNET Name": {
+      "defaultValue": "Gw-VNet",
       "type": "string",
       "metadata": {
-        "description": "Name for the VNET"
+        "description": "Name for the App Gateway VNET"
       }
     },
-    "VNET IP Prefix": {
+    "App Gateway VNET IP Prefix": {
       "defaultValue": "10.0.0",
+      "type": "string",
+      "metadata": {
+        "description": "Prefix for the 256 IP addresses in the VNET"
+      }
+    },
+    "Set VNET Name": {
+      "defaultValue": "Set-VNet",
+      "type": "string",
+      "metadata": {
+        "description": "Name for the Scale Sets"
+      }
+    },
+    "Set VNET IP Prefix": {
+      "defaultValue": "10.0.1",
       "type": "string",
       "metadata": {
         "description": "Prefix for the 256 IP addresses in the VNET"
@@ -101,12 +115,15 @@
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
-          "VNet Name": { "value": "[parameters('VNET Name')]" },
-          "IP Prefix": { "value": "[parameters('VNET IP Prefix')]" },
+          "App Gateway VNet Name": { "value": "[parameters('App Gateway VNET Name')]" },
+          "App Gateway IP Prefix": { "value": "[parameters('App Gateway VNET IP Prefix')]" },
+          "Set VNet Name": { "value": "[parameters('Set VNET Name')]" },
+          "Set IP Prefix": { "value": "[parameters('Set VNET IP Prefix')]" },
           "RDP Rule": { "value": "[parameters('RDP Rule')]" }
         }
       }
-    },
+    }
+    /*,
     {
       "name": "AppGateway",
       "type": "Microsoft.Resources/deployments",
@@ -213,5 +230,6 @@
         }
       }
     }
+      */
   ]
 }
