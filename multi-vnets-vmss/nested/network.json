@@ -28,7 +28,9 @@
   },
   "variables": {
     "App Gateway IP Range": "[concat(parameters('App Gateway IP Prefix'),'.0/24')]",
-    "Set IP Range": "[concat(parameters('Set VNet IP Prefix'),'.0/24')]"
+    "Set IP Range": "[concat(parameters('Set VNet IP Prefix'),'.0/24')]",
+    "oneWayPeeringName": "[concat(parameters('App Gateway VNet Name'), '-', parameters('Set VNet Name'))]",
+    "reversePeeringName": "[concat(parameters('Set VNet Name'), '-', parameters('App Gateway VNet Name'))]"
   },
   "resources": [
     {
@@ -87,23 +89,29 @@
               "addressPrefix": "[concat(parameters('Set VNet IP Prefix'),'.64/28')]"
             }
           }
-        ],
-        "virtualNetworkPeerings": [
-          {
-            "name": "MainPeering",
-            "properties": {
-              "remoteVirtualNetwork": {
-                "id": "[resourceId('Microsoft.Network/virtualNetworks', parameters('App Gateway VNet Name'))]"
-              },
-              "allowVirtualNetworkAccess": true,
-              "allowForwardedTraffic": true,
-              "allowGatewayTransit": false,
-              "useRemoteGateways": false
-            }
-          }
         ]
       },
-      "resources": []
+      "resources": [
+        {
+          "apiVersion": "2016-06-01",
+          "type": "virtualNetworkPeerings",
+          "name": "MainPeering",
+          "location": "[resourceGroup().location]",
+          "dependsOn": [
+            "[resourceId('Microsoft.Network/virtualNetworks', parameters('App Gateway VNet Name'))]",
+            "[resourceId('Microsoft.Network/virtualNetworks', parameters('Set VNet Name'))]"
+          ],
+          "properties": {
+            "remoteVirtualNetwork": {
+              "id": "[resourceId('Microsoft.Network/virtualNetworks', parameters('App Gateway VNet Name'))]"
+            },
+            "allowVirtualNetworkAccess": true,
+            "allowForwardedTraffic": true,
+            "allowGatewayTransit": false,
+            "useRemoteGateways": false
+          }
+        }
+      ]
     }
   ]
 }

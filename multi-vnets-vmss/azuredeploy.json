@@ -32,7 +32,7 @@
       }
     },
     "App Gateway VNET Name": {
-      "defaultValue": "Gw-VNet",
+      "defaultValue": "App-Gateway-VNet",
       "type": "string",
       "metadata": {
         "description": "Name for the App Gateway VNET"
@@ -46,7 +46,7 @@
       }
     },
     "Set VNET Name": {
-      "defaultValue": "Set-VNet",
+      "defaultValue": "Scale-Set-VNet",
       "type": "string",
       "metadata": {
         "description": "Name for the Scale Sets"
@@ -118,7 +118,7 @@
           "App Gateway VNet Name": { "value": "[parameters('App Gateway VNET Name')]" },
           "App Gateway IP Prefix": { "value": "[parameters('App Gateway VNET IP Prefix')]" },
           "Set VNet Name": { "value": "[parameters('Set VNET Name')]" },
-          "Set IP Prefix": { "value": "[parameters('Set VNET IP Prefix')]" },
+          "Set VNet IP Prefix": { "value": "[parameters('Set VNET IP Prefix')]" },
           "RDP Rule": { "value": "[parameters('RDP Rule')]" }
         }
       }
@@ -231,5 +231,5 @@
       }
     }
       */
-  ]
-}
+          ]
+        }
