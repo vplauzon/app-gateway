@@ -201,9 +201,9 @@
                           }
                         ],
                         "applicationGatewayBackendAddressPools": [
-                          {
-                            "id": "[parameters('App Gateway Backend Pool ID')]"
-                          }
+                          //{
+                          //  "id": "[parameters('App Gateway Backend Pool ID')]"
+                          //}
                         ]
                       }
                     }
