@@ -3,10 +3,10 @@
     "contentVersion": "1.0.0.0",
   "parameters": {
     "Public DNS Prefix": {
-      "value": "GEN-UNIQUE"
+      "value": "vpl-ip"
     },
     "VM Admin Password": {
-      "value": "GEN-PASSWORD"
+      "value": "Hsad34er!#$abdeGT"
     }
   }
 }
