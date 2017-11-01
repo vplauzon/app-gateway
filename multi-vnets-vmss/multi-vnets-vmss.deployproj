@@ -30,8 +30,8 @@
     <None Include="Deployment.targets">
       <Visible>False</Visible>
     </None>
+    <Content Include="UpdateBackendPools.ps1" />
     <Content Include="Deploy-AzureResourceGroup.ps1" />
-    <None Include="images\Diagram.png" />
     <None Include="metadata.json" />
     <Content Include="nested\app-gateway.json" />
     <Content Include="nested\metadata.json" />
@@ -41,6 +41,9 @@
     <None Include="scripts\DeployDsc.ps1" />
     <None Include="scripts\TargetConfiguration.ps1" />
     <None Include="scripts\TargetConfiguration.ps1.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
   </ItemGroup>
   <Target Name="GetReferenceAssemblyPaths" />
 </Project>
