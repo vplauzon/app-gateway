@@ -6,8 +6,8 @@ not being able to route to VMSS outside its VNET.
 The limitation is based on a test done when a VMSS tries to register itself to the Application Gateway ;
 if we input the VMSS private IPs directly in the App Gateway backend pools, this works flawlessly.
 
-For this reason the PowerShell script [UpdateBackendPools.ps1] automates the process of matching the
-VMSS private IPs to the backend pool.
+For this reason the PowerShell script [UpdateBackendPools.ps1](UpdateBackendPools.ps1) automates
+the process of matching the VMSS private IPs to the backend pool.
 
 
 Until the limitation is lifted we could run the PowerShell script every few minutes via
