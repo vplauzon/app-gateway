@@ -124,6 +124,17 @@
             }
           }
         ],
+        "backendAddressPools": [
+          {
+            "name": "app-a-Pool"
+          },
+          {
+            "name": "app-b-Pool"
+          },
+          {
+            "name": "app-c-Pool"
+          }
+        ],
         "Probes": [],
         "backendHttpSettingsCollection": [
           {
