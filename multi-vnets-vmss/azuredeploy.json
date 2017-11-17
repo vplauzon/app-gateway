@@ -150,7 +150,7 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[resourceId('Microsoft.Resources/deployments', 'AppGateway')]"
+        "[resourceId('Microsoft.Resources/deployments', 'Network')]"
       ],
       "properties": {
         "mode": "Incremental",
@@ -178,7 +178,7 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[resourceId('Microsoft.Resources/deployments', 'AppGateway')]"
+        "[resourceId('Microsoft.Resources/deployments', 'Network')]"
       ],
       "properties": {
         "mode": "Incremental",
@@ -206,7 +206,7 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2015-01-01",
       "dependsOn": [
-        "[resourceId('Microsoft.Resources/deployments', 'AppGateway')]"
+        "[resourceId('Microsoft.Resources/deployments', 'Network')]"
       ],
       "properties": {
         "mode": "Incremental",
