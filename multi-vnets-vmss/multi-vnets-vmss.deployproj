@@ -30,6 +30,7 @@
     <None Include="Deployment.targets">
       <Visible>False</Visible>
     </None>
+    <Content Include="ChangeRule.ps1" />
     <Content Include="UpdateBackendPools.ps1" />
     <Content Include="Deploy-AzureResourceGroup.ps1" />
     <None Include="metadata.json" />
