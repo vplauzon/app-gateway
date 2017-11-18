@@ -4,7 +4,7 @@ This POC highlights the current (as of end-of-October 2017) limitation of Applic
 not being able to route to VMSS outside its VNET.
 
 You can find a detailed discussion of this POC in this
-[http://vincentlauzon.com/2017/11/17/using-application-gateway-with-vnet-peering](blog post).
+[blog post](http://vincentlauzon.com/2017/11/17/using-application-gateway-with-vnet-peering).
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fvplauzon%2Fapp-gateway%2Fmaster%2Fmulti-vnets-vmss%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
