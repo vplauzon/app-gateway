@@ -15,3 +15,5 @@ You can find a detailed discussion of this POC in this
 
 The limitation is based on a test done when a VMSS tries to register itself to the Application
 Gateway.
+
+Until this template can deploy without errors, we can tell the limitation exist.
