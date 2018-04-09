@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>cd5a85f6-71d1-4b7b-9f10-98794f19308c</ProjectGuid>
+    <ProjectGuid>3b4e7959-4be1-45a0-b466-63d45c49318a</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>
     <TargetFrameworkIdentifier>Deployment</TargetFrameworkIdentifier>
@@ -30,8 +30,6 @@
     <None Include="Deployment.targets">
       <Visible>False</Visible>
     </None>
-    <Content Include="ChangeRule.ps1" />
-    <Content Include="UpdateBackendPools.ps1" />
     <Content Include="Deploy-AzureResourceGroup.ps1" />
     <None Include="metadata.json" />
     <Content Include="nested\app-gateway.json" />
