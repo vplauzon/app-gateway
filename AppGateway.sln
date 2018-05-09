@@ -15,7 +15,7 @@ Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "public-private-vmss", "publ
 EndProject
 Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "multi-vnets-vmss", "multi-vnets-vmss\multi-vnets-vmss.deployproj", "{CD5A85F6-71D1-4B7B-9F10-98794F19308C}"
 EndProject
-Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "multi-vnets-vmss-2", "multi-vnets-vmss-arm\multi-vnets-vmss-2.deployproj", "{3B4E7959-4BE1-45A0-B466-63D45C49318A}"
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "multi-vnets-vmss-arm", "multi-vnets-vmss-arm\multi-vnets-vmss-arm.deployproj", "{3B4E7959-4BE1-45A0-B466-63D45C49318A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
