@@ -1,5 +1,8 @@
 # Application Gateway Integration with 2 VNETs peered together
 
+*This POC is no longer necessary:  the limitation has been lifted and App Gateways can be deployed
+across VNETs in ARM templates.*  See [multi-vnets-vmss](multi-vnets-vmss-arm) for a functioning template.
+
 This POC highlights the current (as of end-of-October 2017) limitation of Application Gateway of
 not being able to route to VMSS outside its VNET.
 
